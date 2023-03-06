@@ -1,70 +1,38 @@
-# Getting Started with Create React App
+MetaTransaction in ERC20 TokenTransfer using Openzeppelin Defender:
+===================================================================
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Contract end work:
+====================
+   1. In your smart contract import ERC2771Context and MinimalForwarder from openzeppelin node modules. Replace msg.sender with _msgSender in the functions where metatransactions needs to be implemented. In our case we deployed an ERC20 token contract where we used _msgSender() in transfer function. (Cherry token: https://mumbai.polygonscan.com/address/0x32767eafae266f65b3cafaea58a54a37c45595c6#code) 
+    
+   2. While deploying the contract make sure you pass the MinimalForwarder contract address in the constructor.
+   3. Put your contract address in the .env's REACT_APP_CONTRACT_ADDRESS
 
-## Available Scripts
 
-In the project directory, you can run:
+Openzeppelin Defender end work:
+===============================
 
-### `npm start`
+  1. Go to Openzeppelin Defender website and create your account. Then go to relayer section and create a relay. We have created a Relayer on Polygon Mumbai testnet and sent some MATIC test tokens to this relayer address which will be used for gas fee.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+  2. Create an autotask using the Autotask section in Openzeppelin Defender page. While creating Autotask make sure that you select "webhook" and select the correct relayer name so that this autotask will be connected to your relayer.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+  3. While creating the Autotask it will show you a code section with a sample code. You can change this code right now or you can change it later by selecting the settings and clicking on edit code option in the Autotask dashboard.
+    We have put a file named "Autotask code" in this repo. Copy and paste that code in the Autotask code section. If required replace the minimalforwarder abi and address. We have used Cherry token contract address in the code. If you wish to use your own contract you can replace this too.
 
-### `npm test`
+  4. Once the autotask is created you will be able to copy the autotask webhook URL from the autotask dashboard. Paste this in the react app .env's REACT_APP_WEBHOOK_URL
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+  Integration with Frontend:
+  ===========================
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    1. Integration with frontend varies depending on the frontend you build. I have created an integration based on my requirement which is for tokentransfer.
+    2. However you will almost need all the files in metatx folder especially signer.js which is where the core logic of metatransaction is present.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+    Original Videos I used for reference:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+    ERC20 react app UI: https://www.youtube.com/watch?v=ipKCKB3PCpk
+    Openzeppelin Defender: https://www.youtube.com/watch?v=mhAUmULLV44
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
