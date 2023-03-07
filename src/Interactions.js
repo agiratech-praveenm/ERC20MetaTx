@@ -81,7 +81,7 @@ const Interactions =(props)=>{
                 <input type='text' id='sendAmount' min='0' className={styles.amountInput}/>
                 <button type='submit' className={styles.button6}>Send</button>
                 <div>
-                    <h2>Transaction Hash:</h2>
+                    <h2>Transaction Status</h2>
                     {transferHash}
                 </div>
             </form>

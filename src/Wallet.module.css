@@ -2,30 +2,34 @@
 	text-align: left;
 	width: 50%;
 	margin: auto;
+	margin-top: 10px;
 	border-radius: 10px;
-	background-color: blueviolet;
+	background-color: white;
 }
 
 .walletCard h3 {
 	margin-left:1em;
 	margin-bottom: 1em;
-	margin-top: 1em;
+	margin-top: 5px;
 }
 
 .interactionsCard {
 	display: flex;
 	flex-direction: column;
 	width: 50%;
-	margin: auto;
+	margin-top: 10px;
+	margin-left: auto;
+	margin-right: auto;
 	padding-bottom: 1em;
 	border-radius: 10px;
-	background-color: blueviolet;
+	background-color: white;
 	
 }
 
 .addressInput{
 	width: 75%;
 	height: 25px;
+	border-radius: 10px;
 }
 
 .button6 {
@@ -47,7 +51,9 @@
 
 .amountInput{
 	height: 25px;
+	border-radius: 10px;
 }
 div{
-	padding: 2px;
+	padding: 5px;
+
 }
