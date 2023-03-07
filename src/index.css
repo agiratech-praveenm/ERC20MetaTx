@@ -9,7 +9,12 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: linear-gradient(to bottom right, blue, indigo);
+  /*background-image: linear-gradient(to right, blue, indigo);*/
+  background: blue; 
+background: -moz-linear-gradient(45deg, #3356f0 0%, #f5f2f1 25%, #ede5e6 50%, #3b58d9 75%, #e955ba 100%); 
+background: -webkit-linear-gradient(45deg, #335cf0 0%,#3c3fe6 25%,#2760dc 50%,#3123cc 75%,#1885bc 100%); 
+background: linear-gradient(45deg, #3004c0 0%,#e63c86 25%,#d627dc 50%,#2326cc 75%,#dfe3e4 100%); 
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
   min-height: 100%;
 }
 
