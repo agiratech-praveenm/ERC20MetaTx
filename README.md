@@ -35,4 +35,4 @@ Openzeppelin Defender end work:
     ERC20 react app UI: https://www.youtube.com/watch?v=ipKCKB3PCpk
     Openzeppelin Defender: https://www.youtube.com/watch?v=mhAUmULLV44
 
-
+If you face any uncaught promise error while running the app, try changing the REACT_APP_QUICKNODE_URL and restart the app.
